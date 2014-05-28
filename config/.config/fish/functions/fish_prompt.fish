@@ -20,8 +20,7 @@ function fish_right_prompt
   set_color blue -o
   printf '[%s] ' (hostname)
 
-if not set -q -g __fish_robbyrussell_functions_defined
-  set -g __fish_robbyrussell_functions_defined
+
 function _git_branch_name
     echo (git symbolic-ref HEAD ^/dev/null | sed -e 's|^refs/heads/||')
   end
@@ -29,7 +28,7 @@ function _git_branch_name
   function _is_git_dirty
     echo (git status -s --ignore-submodules=dirty ^/dev/null)
   end
-  end
+  
 
   set -l red (set_color -o red)
   set -l yellow (set_color -o yellow)
